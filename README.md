@@ -1,4 +1,6 @@
 # prepwd
+[![Build Status](https://travis-ci.org/mtib/prepwd.svg?branch=master)](https://travis-ci.org/mtib/prepwd)
+
 clones all repos/gists of a user
 
 ## usage

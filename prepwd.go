@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"os"
 	"strings"
+
+	_ "github.com/mtib/prepwd/gclone"
 )
 
 const (
@@ -24,7 +26,6 @@ func (t task) printinfo() (err error) {
 
 func (t task) prepwdwork() (num int, err error) {
 	t.printinfo()
-
 	return
 }
 
