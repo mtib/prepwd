@@ -5,7 +5,7 @@ clones all repos/gists of a user
 
 ## usage
 ```
-prepwd <user>
+prepwd [https|ssh] <user>
 ```
 
 # api links

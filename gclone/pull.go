@@ -8,6 +8,8 @@ import (
 const (
 	sshGithubTemplate   = "git@github.com:%s/%s"
 	httpsGithubTemplate = "https://github.com/%s/%s"
+	sshGistTemplate     = "git@gist.github.com:%v"
+	httpsGistTemplate   = "https://gist.github.com/%v"
 	defaultDepth        = 10
 )
 
@@ -27,6 +29,30 @@ func CloneGithub(user, repo, method *string) (err error) {
 	default:
 		err = downloadError("unknown method")
 	}
+	return
+}
+
+// CloneGithubGist clones gists using method [https|ssh]
+func CloneGithubGist(gist, name, method *string) (err error) {
+	var clone *exec.Cmd
+	var remote string
+	switch *method {
+	case "ssh":
+		remote = fmt.Sprintf(sshGistTemplate, *gist)
+	case "https":
+		remote = fmt.Sprintf(httpsGistTemplate, *gist)
+	default:
+		err = downloadError("unknown method")
+		return
+	}
+	clone = exec.Command("git", "clone", remote, *name)
+	err = clone.Start()
+	if err != nil {
+		return
+	}
+	fmt.Print("Cloning Gist")
+	clone.Wait()
+	fmt.Println(" ... done")
 	return
 }
 
