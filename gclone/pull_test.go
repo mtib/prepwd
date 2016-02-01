@@ -1,7 +1,6 @@
 package gclone
 
 import (
-	"fmt"
 	"os"
 	"testing"
 )
@@ -29,6 +28,6 @@ func mClone(m *testing.T, method string) {
 		if err != nil {
 			m.FailNow()
 		}
-		fmt.Println(os.RemoveAll(successfull[index].repo))
+		os.RemoveAll(successfull[index].repo)
 	}
 }
