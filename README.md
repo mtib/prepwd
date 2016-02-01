@@ -1,7 +1,20 @@
 # prepwd
 [![Build Status](https://travis-ci.org/mtib/prepwd.svg?branch=master)](https://travis-ci.org/mtib/prepwd)
 
-clones all repos/gists of a user
+This tool written in Go will clone all owned (public) repos and gists of the user
+specified, it will also download the starred repos. It will structure the folders
+like this:
+
+- <user>
+    - repos
+        - ...
+    - gists
+        - ...
+    - stars
+        - ...
+
+It will use an escaped version of the gist description as the directory name, because
+the random letter string wouldn't make a good descriptor.
 
 ## usage
 ```
