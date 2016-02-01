@@ -5,7 +5,7 @@ This tool written in Go will clone all owned (public) repos and gists of the use
 specified, it will also download the starred repos. It will structure the folders
 like this:
 
-- <user>
+- user
     - repos
         - ...
     - gists
