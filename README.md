@@ -23,6 +23,8 @@ but you could change it in the gclone/pull.go file on your own.
 ## usage
 ```
 prepwd [https|ssh] <user>
+prepwd mtib
+prepwd ssh mtib
 ```
 
 # api links
