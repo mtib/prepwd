@@ -16,6 +16,10 @@ like this:
 It will use an escaped version of the gist description as the directory name, because
 the random letter string wouldn't make a good descriptor.
 
+By default it will only clone the repositories to a depth of 10 commits.
+There is currently no parameter to change this from the command line,
+but you could change it in the gclone/pull.go file on your own.
+
 ## usage
 ```
 prepwd [https|ssh] <user>
