@@ -2,6 +2,7 @@
 *.o
 *.a
 *.so
+prepwd
 
 # Folders
 _obj
